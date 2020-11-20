@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@using MockSchool.Web.DataRepositories
+@using MockSchool.Web.Extensions
+
+@model IEnumerable<Student>
+@{ 
+    ViewBag.Title = "学生列表页面";
 }
+
+<div class="card-deck">
+    @foreach (var student in Model)
+    {
+        var photoPath = "~/images/avatars/" + (student.PhotoPath ?? "noimage.png");
+    <div class="card m-3">
+        <div class="card-header">
+            <h3 class="card-title">@student.Name</h3>
+        </div>
+        <div class="card-body">
+            <img class="card-img-top" src="@photoPath" asp-append-version="true" />
+            <h5>主修科目：@student.Major.GetDisplayName()</h5>
+        </div>
+        <div class="card-footer">
+            <a asp-controller="Home" asp-action="Detail" asp-route-id="@student.Id" class="btn btn-info">查看</a>
+            <a asp-controller="Home" asp-action="Edit" asp-route-id="@student.Id" class="btn btn-primary">编辑</a>
+            <a asp-controller="Home" asp-action="Delete" asp-route-id="@student.Id" class="btn btn-danger">删除</a>
+        </div>
+
+    </div>
+    }
+</div>

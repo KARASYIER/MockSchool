@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using MockSchool.Web.DataRepositories.EnumTypes;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MockSchool.Web.ViewModels
@@ -13,14 +14,14 @@ namespace MockSchool.Web.ViewModels
 
         [Required]
         [Display(Name = "主修科目")]
-        public MajorEnum? Major { get; set; }
+        public MajorEnum Major { get; set; }
 
         [Display(Name = "电子邮箱")]
         [RegularExpression(@"^[a-zA-z0-9_.+-]+@[a-zA-z0-9-]+\.[a-zA-z0-9-.]+$", ErrorMessage = "电子邮箱格式不正确")]
         public string Email { get; set; }
 
         [Display(Name = "头像")]
-        public IFormFile Photo { get; set; }
+        public List<IFormFile> Photos { get; set; }
     }
 
 
