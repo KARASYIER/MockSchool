@@ -13,9 +13,6 @@
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
         "outputPath": "G:\\MockSchool\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -25,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://212.64.103.90:8081/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

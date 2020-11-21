@@ -40,10 +40,10 @@
     </div>
 
     <div class="form-group row">
-        <label asp-for="Photo" class="col-sm-2 col-form-label"></label>
+        <label asp-for="Photos" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10 ">
             <div class="custom-file ">
-                <input asp-for="Photo" multiple class="form-control custom-file-input" />
+                <input asp-for="Photos" multiple class="form-control custom-file-input" />
                 <label class="custom-file-label">选择图片...</label>
             </div>
         </div>
@@ -60,9 +60,16 @@
     <script>
         $(document).ready(function () {
             $(".custom-file-input").on("change", function () {
-                var fileName = $(this).val().split("\\").pop();
-                console.log(fileName)
-                $(this).next(".custom-file-label").html(fileName);
+                var label = $(this).next(".custom-file-label");
+                var files = $(this)[0].files;
+                if (files.length > 1) {
+                    label.html("您已经选择了：" + files.lenght + " 个文件")
+                }
+                else {
+                    //var fileName = $(this).val().split("\\").pop();
+                    //console.log(fileName)
+                    label.html(files[0].name);
+                }
             })
         })
     </script>
