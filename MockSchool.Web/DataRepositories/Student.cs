@@ -1,4 +1,6 @@
 ﻿using MockSchool.Web.DataRepositories.EnumTypes;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MockSchool.Web.DataRepositories
 {
@@ -12,7 +14,7 @@ namespace MockSchool.Web.DataRepositories
 
         public string Email { get; set; }
 
-        public string PhotoPath { get; set; }
+        public string PhotoPath { get; set; } = "noimage.pgn";
     }
 
 }

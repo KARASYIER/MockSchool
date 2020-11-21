@@ -15,7 +15,6 @@ namespace MockSchool.Web.Controllers
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IStudentRepository _studentRepository;
 
-
         public HomeController(IWebHostEnvironment webHostEnvironment, IStudentRepository studentRepository)
         {
             this._webHostEnvironment = webHostEnvironment;
@@ -38,22 +37,7 @@ namespace MockSchool.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                string uniquedFileName = null;
-
-                if (model.Photos != null && model.Photos.Count > 0)
-                {
-                    var uploadFolder = System.IO.Path.Combine(_webHostEnvironment.WebRootPath, "images", "avatars");
-
-                    foreach (var photo in model.Photos)
-                    {
-                        uniquedFileName = Guid.NewGuid().ToString() + photo.FileName.Substring(photo.FileName.LastIndexOf('.') + 1);
-
-                        var filePath = System.IO.Path.Combine(uploadFolder, uniquedFileName);
-
-                        photo.CopyTo(new System.IO.FileStream(filePath, System.IO.FileMode.Create));
-                    }
-
-                }
+                string uniquedFileName = ProcessUploadFile(model);
 
                 var student = new Student
                 {
@@ -134,8 +118,10 @@ namespace MockSchool.Web.Controllers
 
             if (student == null)
             {
-                ViewBag.ErrorMessage = $"学生Id={id}不存在";
-                return View("Error");
+                //ViewBag.ErrorMessage = $"学生Id={id}不存在";
+                Response.StatusCode = 404;
+
+                return View("StudentNotFound", id);
             }
 
             var viewModel = new StudentDetailViewModel()
@@ -147,6 +133,16 @@ namespace MockSchool.Web.Controllers
             return View(viewModel);
         }
 
+        public IActionResult Details(int id)
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 处理上传的图片,多图保存
+        /// </summary>
+        /// <param name="studentCreateViewModel"></param>
+        /// <returns></returns>
         private string ProcessUploadFile(StudentCreateViewModel studentCreateViewModel)
         {
             string fileName = null;

@@ -1,7 +1,7 @@
-﻿@using MockSchool.Web.ViewModels
-@using MockSchool.Web.DataRepositories
-@using MockSchool.Web.DataRepositories.EnumTypes
-@using MockSchool.Web.Extensions;
+﻿@using MockSchool.Web.Extensions
+
+@model MockSchool.Web.ViewModels.StudentDetailViewModel
+
 @{
     ViewBag.Title = "学生详情";
     var photoPath = "~/images/avatars/" + Model.Student.PhotoPath ?? "noimage.png";
