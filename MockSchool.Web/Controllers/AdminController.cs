@@ -357,7 +357,8 @@ namespace MockSchool.Web.Controllers
 
             var model = new List<RolesInUserViewModel>();
 
-            foreach (var role in _roleManager.Roles)
+            var roles = _roleManager.Roles.ToList();
+            foreach (var role in roles)
             {
                 model.Add(new RolesInUserViewModel
                 {
@@ -371,13 +372,15 @@ namespace MockSchool.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ManagerUserRoles(List<RolesInUserViewModel> model, string userId)
+        public async Task<IActionResult> ManagerUserRoles(List<RolesInUserViewModel> model, string id)
         {
-            var user = await _userManager.FindByIdAsync(userId);
+            ViewBag.UserId = id;
+
+            var user = await _userManager.FindByIdAsync(id);
 
             if (user == null)
             {
-                ViewBag.ErrorMessage = $"无法查询到ID为{userId}的用户";
+                ViewBag.ErrorMessage = $"无法查询到ID为{id}的用户";
                 return View("NotFound");
             }
 
@@ -387,11 +390,18 @@ namespace MockSchool.Web.Controllers
 
             if (!result.Succeeded)
             {
-                ModelState.AddModelError("", "无法向用户添加选定角色");
+                ModelState.AddModelError("", "无法删除用户中现有的角色");
                 return View(model);
             }
 
-            return RedirectToAction("EditUser", new { Id = userId });
+            result = await _userManager.AddToRolesAsync(user, model.Where(p => p.IsSelected).Select(p => p.RoleName));
+
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "无法向用户添加选定角色");
+                return View(model);
+            }
+            return RedirectToAction("EditUser", new { Id = id });
         }
 
         #endregion
