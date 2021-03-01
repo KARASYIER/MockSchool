@@ -1,0 +1,52 @@
+﻿@model EditRoleViewModel
+
+<h1>编辑角色</h1>
+
+<form method="post">
+    <div class="form-group row">
+        <label class="col-form-label col-md-1" asp-for="Id"></label>
+        <div class="col-md-11">
+            <input asp-for="Id" class="form-control" disabled />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-md-1 " asp-for="RoleName"></label>
+        <div class="col-md-11">
+            <input asp-for="RoleName" class="form-control" />
+            <span asp-validation-for="RoleName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+            <button asp-route-id="@Model.Id" class="btn btn-primary btn-sm" type="submit">更新</button>
+            <a asp-action="ListRoles" class="btn btn-danger btn-sm">取消</a>
+        </div>
+    </div>
+
+
+    <div class="card mt-5">
+        <div class="card-header">
+            <h5>该角色用户</h5>
+        </div>
+        <div class="card-body">
+            @if (Model.Users.Any()) foreach (var user in Model.Users)
+                {
+                    <h6 class="card-title">@user</h6>
+                }
+            else
+            {
+                <h6 class="card-title">目前没有用户信息</h6>
+            }
+        </div>
+        <div class="card-footer">
+            <a asp-controller="Admin" asp-action="EditUsersInRole" asp-route-id="@Model.Id" class="btn btn-primary">添加或删除用户</a>
+        </div>
+    </div>
+</form>
+<div>
+
+</div>

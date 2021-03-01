@@ -1,0 +1,81 @@
+﻿@model EditUserViewModel
+@{
+    ViewBag.Title = "编辑用户";
+}
+
+<h1>编辑用户</h1>
+<form method="post">
+    <div class="form-group row">
+        <label asp-for="Id" class="col-form-label col-md-1"></label>
+        <div class="col-md-11">
+            <input asp-for="Id" class="form-control" disabled />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Email" class="col-form-label col-md-1"></label>
+        <div class="col-md-11">
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="UserName" class="col-form-label col-md-1"></label>
+        <div class="col-md-11">
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="City" class="col-form-label col-md-1"></label>
+        <div class="col-md-11">
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+            <button class="btn btn-primary btn-sm" type="submit">更新</button>
+        </div>
+    </div>
+</form>
+
+<div class="card mb-3">
+    <div class="card-header">用户角色</div>
+    <div class="card-body">
+        @if (Model.Roles.Any())
+        {
+            foreach (var role in Model.Roles)
+            {
+                <div class="card-title">@role</div>
+            }
+        }
+        else
+        {
+            <div class="card-title">目前没有</div>
+        }
+    </div>
+    <div class="card-footer">
+        <a asp-action="ManagerUserRoles" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">管理角色</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">用户声明</div>
+    <div class="card-body">
+        @if (Model.Claims.Any())
+        {
+            foreach (var claim in Model.Claims)
+            {
+                <div class="card-title">@claim</div>
+            }
+        }
+        else
+        {
+            <div class="card-title">目前没有</div>
+        }
+    </div>
+    <div class="card-footer">
+        <a href="#" class="btn btn-primary btn-sm">管理声明</a>
+    </div>
+</div>

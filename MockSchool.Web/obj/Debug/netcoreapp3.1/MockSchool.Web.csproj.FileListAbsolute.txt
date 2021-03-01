@@ -1,6 +1,5 @@
 G:\MockSchool\MockSchool.Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
 G:\MockSchool\MockSchool.Web\bin\Debug\netcoreapp3.1\appsettings.json
-G:\MockSchool\MockSchool.Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 G:\MockSchool\MockSchool.Web\bin\Debug\netcoreapp3.1\MockSchool.Web.exe
 G:\MockSchool\MockSchool.Web\bin\Debug\netcoreapp3.1\MockSchool.Web.deps.json
 G:\MockSchool\MockSchool.Web\bin\Debug\netcoreapp3.1\MockSchool.Web.runtimeconfig.json
@@ -161,3 +160,8 @@ G:\MockSchool\MockSchool.Web\obj\Debug\netcoreapp3.1\MockSchool.Web.dll
 G:\MockSchool\MockSchool.Web\obj\Debug\netcoreapp3.1\MockSchool.Web.pdb
 G:\MockSchool\MockSchool.Web\obj\Debug\netcoreapp3.1\MockSchool.Web.genruntimeconfig.cache
 G:\MockSchool\MockSchool.Web\obj\Debug\netcoreapp3.1\Razor\Views\Error\Error.cshtml.g.cs
+G:\MockSchool\MockSchool.Web\obj\Debug\netcoreapp3.1\scopedcss\bundle\MockSchool.Web.styles.css
+G:\MockSchool\MockSchool.Web\bin\Debug\netcoreapp3.1\nlog.config
+G:\MockSchool\MockSchool.Web\bin\Debug\netcoreapp3.1\NLog.dll
+G:\MockSchool\MockSchool.Web\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+G:\MockSchool\MockSchool.Web\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll

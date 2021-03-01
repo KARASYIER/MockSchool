@@ -1,9 +1,9 @@
 G:\MockSchool\MockSchool.Infrastructure\bin\Debug\netstandard2.0\MockSchool.Infrastructure.deps.json
 G:\MockSchool\MockSchool.Infrastructure\bin\Debug\netstandard2.0\MockSchool.Infrastructure.dll
 G:\MockSchool\MockSchool.Infrastructure\bin\Debug\netstandard2.0\MockSchool.Infrastructure.pdb
-G:\MockSchool\MockSchool.Infrastructure\obj\Debug\netstandard2.0\MockSchool.Infrastructure.csprojAssemblyReference.cache
 G:\MockSchool\MockSchool.Infrastructure\obj\Debug\netstandard2.0\MockSchool.Infrastructure.AssemblyInfoInputs.cache
 G:\MockSchool\MockSchool.Infrastructure\obj\Debug\netstandard2.0\MockSchool.Infrastructure.AssemblyInfo.cs
 G:\MockSchool\MockSchool.Infrastructure\obj\Debug\netstandard2.0\MockSchool.Infrastructure.csproj.CoreCompileInputs.cache
 G:\MockSchool\MockSchool.Infrastructure\obj\Debug\netstandard2.0\MockSchool.Infrastructure.dll
 G:\MockSchool\MockSchool.Infrastructure\obj\Debug\netstandard2.0\MockSchool.Infrastructure.pdb
+G:\MockSchool\MockSchool.Infrastructure\obj\Debug\netstandard2.0\MockSchool.Infrastructure.csprojAssemblyReference.cache

@@ -1,6 +1,5 @@
 G:\MockSchool\WebApplication1\bin\Debug\netcoreapp3.1\appsettings.Development.json
 G:\MockSchool\WebApplication1\bin\Debug\netcoreapp3.1\appsettings.json
-G:\MockSchool\WebApplication1\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 G:\MockSchool\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.exe
 G:\MockSchool\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.deps.json
 G:\MockSchool\WebApplication1\bin\Debug\netcoreapp3.1\WebApplication1.runtimeconfig.json
@@ -16,6 +15,9 @@ G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.Cor
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorAssemblyInfo.cache
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorAssemblyInfo.cs
+G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\staticwebassets\WebApplication1.StaticWebAssets.Manifest.cache
+G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\staticwebassets\WebApplication1.StaticWebAssets.xml
+G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\scopedcss\bundle\WebApplication1.styles.css
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.TagHelpers.input.cache
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.TagHelpers.output.cache
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorCoreGenerate.cache
@@ -29,8 +31,6 @@ G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.csh
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorTargetAssemblyInfo.cache
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorTargetAssemblyInfo.cs
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.Views.pdb
-G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\staticwebassets\WebApplication1.StaticWebAssets.Manifest.cache
-G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\staticwebassets\WebApplication1.StaticWebAssets.xml
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.dll
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.pdb
 G:\MockSchool\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.genruntimeconfig.cache

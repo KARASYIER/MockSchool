@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ApplicationUser>
+@{
+    ViewBag.Title = "用户列表";
+}
+<h1>所有用户</h1>
+
+@if (Model.Any())
+{
+    <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-sm mb-3">创建用户</a>
+    foreach (var user in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">用户Id：@user.Id</div>
+            <div class="card-body">
+                <h5 class="card-title">@user.UserName</h5>
+            </div>
+            <div class="card-footer">
+                <form method="post" asp-controller="Admin" asp-action="DeleteUser" asp-route-id="@user.Id">
+                    <a asp-controller="Admin" asp-action="EditUser" asp-route-id="@user.Id" class="btn btn-primary btn-sm">编辑</a>
+                    <span id="confirmDeleteSpan_@user.Id" style="display:none">
+                        <sapn>您确定要删除？</sapn>
+                        <button class="btn btn-danger btn-sm" type="submit">是</button>
+                        <a href="#" class="btn btn-primary btn-sm" onclick="confirmDelete('@user.Id',false)">否</a>
+                    </span>
+                    <a id="deleteSpan_@user.Id" href="#" class="btn btn-danger btn-sm" onclick="confirmDelete('@user.Id',true)">删除</a>
+                </form>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">尚未常见用户</div>
+        <div class="card-body">
+            <h5>点击下面按钮创建用户</h5>
+        </div>
+        <div class="card-footer">
+            <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-sm">创建用户</a>
+        </div>
+    </div>
+}
+
+@section Scripts{
+    <script src="~/js/customScript.js" asp-append-version="true"></script>
+}

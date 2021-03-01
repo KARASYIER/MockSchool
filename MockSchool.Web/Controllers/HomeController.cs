@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using MockSchool.Web.DataRepositories;
 using MockSchool.Web.ViewModels;
 
@@ -14,15 +15,25 @@ namespace MockSchool.Web.Controllers
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IStudentRepository _studentRepository;
+        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(IWebHostEnvironment webHostEnvironment, IStudentRepository studentRepository)
+
+        public HomeController(IWebHostEnvironment webHostEnvironment, IStudentRepository studentRepository, ILogger<HomeController> logger)
         {
             this._webHostEnvironment = webHostEnvironment;
             this._studentRepository = studentRepository;
+            this._logger = logger;
         }
 
         public IActionResult Index()
         {
+            //_logger.LogTrace("TraceLog");
+            //_logger.LogDebug("DebugLog");
+            //_logger.LogInformation("InformationLog");
+            //_logger.LogWarning("WraningLog");
+            //_logger.LogError("ErrorLog");
+            //_logger.LogCritical("CriticalLog");
+
             return View(_studentRepository.GetAllStudents());
         }
 
@@ -66,7 +77,8 @@ namespace MockSchool.Web.Controllers
 
                 if (student == null)
                 {
-                    return View("Error");
+                    ViewBag.ErrorMessage = $"学生Id={model.Id}不存在";
+                    return View("NotFound");
                 }
 
                 student.Major = model.Major;
@@ -91,12 +103,13 @@ namespace MockSchool.Web.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+
             var student = _studentRepository.GetStudentById(id);
 
             if (student == null)
             {
                 ViewBag.ErrorMessage = $"学生Id={id}不存在";
-                return View("Error");
+                return View("NotFound");
             }
 
             var studentEditViewModel = new StudentEditViewModel
@@ -114,14 +127,19 @@ namespace MockSchool.Web.Controllers
         [HttpGet]
         public IActionResult Detail(int id)
         {
+            if (id == 0)
+            {
+                throw new NullReferenceException();
+            }
+
             var student = _studentRepository.GetStudentById(id);
 
             if (student == null)
             {
-                //ViewBag.ErrorMessage = $"学生Id={id}不存在";
-                Response.StatusCode = 404;
+                ViewBag.ErrorMessage = $"学生Id={id}不存在";
+                //Response.StatusCode = 404;
 
-                return View("StudentNotFound", id);
+                return View("NotFound");
             }
 
             var viewModel = new StudentDetailViewModel()

@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+using MockSchool.Web.Models;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MockSchool.Web.DataRepositories
 {
@@ -18,7 +16,7 @@ namespace MockSchool.Web.DataRepositories
     /// 
     /// 
     /// </summary>
-    public class AppDbContext: DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -30,10 +28,16 @@ namespace MockSchool.Web.DataRepositories
         /// <param name="builder"></param>
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            base.OnModelCreating(builder);
+
             builder.Seed();
 
-            base.OnModelCreating(builder);
-            //builder.Seed();
+            var foreignKeys = builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys());
+
+            foreach(var foreignKey in foreignKeys)
+            {
+                foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
+            }
         }
     }
 }
