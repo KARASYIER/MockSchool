@@ -34,7 +34,7 @@ namespace MockSchool.Web.DataRepositories
 
             var foreignKeys = builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys());
 
-            foreach(var foreignKey in foreignKeys)
+            foreach (var foreignKey in foreignKeys)
             {
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
             }

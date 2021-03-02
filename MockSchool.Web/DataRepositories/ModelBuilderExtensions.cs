@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using MockSchool.Web.DataRepositories.EnumTypes;
+using MockSchool.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,9 +31,9 @@ namespace MockSchool.Web.DataRepositories
                 Id = 2,
                 Name = "Karasyier",
                 Major = MajorEnum.Mathematics,
-                Email = "karasyier@hotmail.com"
-
+                Email = "karasyier@hotmail.com",
             });
+
         }
     }
 }

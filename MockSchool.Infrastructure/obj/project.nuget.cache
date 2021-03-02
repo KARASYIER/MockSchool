@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/Y2yEfbIp9lAgqxZWkxpaJ3TTcgl7FaWlDDjbE9Xx7MCa+6yGXcHWbsikOojUaedcmt+nfBhnlDxoQ1hNm+O0Q==",
+  "dgSpecHash": "6Z1F7ZEfMnD8yZ/qx0OkN+h3GgiG7I5d9zsSedXX3wUquDJAgbWSlIOkEzrOiRBGVdZiCXGpauEPp+0XFp6uPA==",
   "success": true,
   "projectFilePath": "G:\\MockSchool\\MockSchool.Infrastructure\\MockSchool.Infrastructure.csproj",
   "expectedPackageFiles": [
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

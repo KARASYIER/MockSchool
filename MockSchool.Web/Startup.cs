@@ -16,6 +16,7 @@ using MockSchool.Web.CustomerMiddlewares;
 using MockSchool.Web.DataRepositories;
 using MockSchool.Web.Models;
 
+
 namespace MockSchool.Web
 {
     public class Startup
@@ -60,6 +61,8 @@ namespace MockSchool.Web
             })
             .AddXmlSerializerFormatters();
 
+            services.AddMiniProfiler().AddEntityFramework(); ;
+
             services.AddMvc();
 
         }
@@ -67,9 +70,6 @@ namespace MockSchool.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
-
-
             if (env.IsDevelopment())
             {
                 //环境变量配置了开发模式,不进入F5,也会进入此逻辑
@@ -112,6 +112,8 @@ namespace MockSchool.Web
             //静态文件中间件
             app.UseStaticFiles();
 
+            app.UseMiniProfiler();
+
             //身份验证中间件
             app.UseAuthentication();
 
@@ -130,6 +132,7 @@ namespace MockSchool.Web
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }
