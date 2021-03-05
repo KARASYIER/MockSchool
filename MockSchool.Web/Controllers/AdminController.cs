@@ -25,6 +25,11 @@ namespace MockSchool.Web.Controllers
 
         public IActionResult Index()
         {
+            List<int> s = new List<int>();
+            s.Reverse();
+
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+
             return View();
         }
 
